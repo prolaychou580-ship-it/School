@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>တရားဝင် ဥပဒေရေးရာ သတိပေးကြေညာချက်</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #dc2626;
+            --primary-dark: #b91c1c;
+            --primary-light: #fef2f2;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-600: #475569;
+            --slate-100: #f1f5f9;
+            --border-color: #e2e8f0;
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans Myanmar', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: var(--slate-800);
+            line-height: 1.8;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%);
+            color: white;
+            padding: 45px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f59e0b, #ef4444, #3b82f6);
+        }
+
+        header h1 {
+            font-size: 1.85rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.92;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .alert-banner {
+            background-color: var(--primary-light);
+            border-left: 6px solid var(--primary);
+            padding: 24px;
+            margin: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(220, 38, 38, 0.05);
+        }
+
+        .alert-banner h2 {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .alert-banner p {
+            font-size: 1rem;
+            color: var(--slate-800);
+        }
+
+        .content {
+            padding: 0 30px 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h3 {
+            color: var(--slate-900);
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .law-card {
+            background-color: #fafafa;
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--slate-900);
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin-bottom: 18px;
+            transition: var(--transition);
+        }
+
+        .law-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            border-color: #cbd5e1;
+        }
+
+        .law-card h4 {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .law-card p {
+            font-size: 0.98rem;
+            color: var(--slate-600);
+        }
+
+        .rules-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .rules-list li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+            color: var(--slate-600);
+        }
+
+        .rules-list li::before {
+            content: "⚖️";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--slate-900);
+            color: white;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--slate-800);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--slate-900);
+            color: var(--slate-900);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--slate-100);
+            transform: translateY(-1px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            background-color: var(--slate-100);
+            font-size: 0.88rem;
+            color: var(--slate-600);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            header { padding: 30px 20px; }
+            header h1 { font-size: 1.45rem; }
+            .content, .alert-banner { padding: 20px 15px; margin: 15px; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>တရားဝင် ဥပဒေရေးရာ သတိပေးကြေညာချက်</h1>
+        <p>ဖုန်းအတွင်းရှိ ပုဂ္ဂိုလ်ရေးဆိုင်ရာ Chat နှင့် Photos များအား ခွင့်ပြုချက်မရှိဘဲ စစ်ဆေးခြင်းဆိုင်ရာ တရားစွဲဆိုမည့် အချက်အလက်များ</p>
+    </header>
+
+    <div class="alert-banner">
+        <h2>⚠️ ပြတ်သားစွာ အသိပေးချက် (Legal Warning)</h2>
+        <p>
+            မည်သူမဆို ဖုန်းပိုင်ရှင်၏ သဘောတူခွင့်ပြုချက် သို့မဟုတ် တရားရုံးဝရမ်းမပါဘဲ ဖုန်းအတွင်းရှိ <strong>ကိုယ်ရေးကိုယ်တာ စကားပြောဆိုမှုများ (Chats) နှင့် ဓာတ်ပုံ/ဗီဒီယိုများ (Photos)</strong> ကို အတင်းအကျပ် ဖွင့်ခိုင်းခြင်း၊ ဝင်ရောက်စစ်ဆေးခြင်း ပြုလုပ်ပါက အောက်ဖော်ပြပါ တည်ဆဲဥပဒေပုဒ်မများဖြင့် <strong>တရားစွဲဆို အရေးယူသွားမည် ဖြစ်ပါသည်။</strong>
+        </p>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <h3>📌 ၁။ တရားစွဲဆို အရေးယူမည့် ဥပဒေပုဒ်မများ</h3>
+            
+            <div class="law-card">
+                <h4>(က) နိုင်ငံသားများ၏ ပုဂ္ဂိုလ်ဆိုင်ရာ လွတ်လပ်မှုနှင့် လုံခြုံမှုကို အကာအကွယ်ပေးရေး ဥပဒေ</h4>
+                <p><strong>ပုဒ်မ ၇ နှင့် ပုဒ်မ ၈ -</strong> တရားရုံး ဝရမ်းမပါဘဲ မည်သူ့ကိုမဆို ပုဂ္ဂိုလ်ရေးဆိုင်ရာ ဆက်သွယ်မှုများ (ဖုန်း၊ မက်ဆေ့ချ်၊ အချက်အလက်များ) ကို ဝင်ရောက်စစ်ဆေးခြင်း၊ ကြားဖြတ်ရယူခြင်း သို့မဟုတ် ပုဂ္ဂိုလ်ရေးလွတ်လပ်ခွင့်ကို ထိပါးနှောင့်ယှက်ခြင်း ပြုလုပ်ပါက ထောင်ဒဏ်နှင့် ငွေဒဏ် ချမှတ်နိုင်သည့် ပြဋ္ဌာန်းချက်ဖြင့် တရားစွဲဆိုပါမည်။</p>
+            </div>
+
+            <div class="law-card">
+                <h4>(ခ) အီလက်ထရောနစ် ဆက်သွယ်ဆောင်ရွက်ရေး ဥပဒေ</h4>
+                <p><strong>ပုဒ်မ ၃၄ (ဂ) -</strong> ဖုန်းပိုင်ရှင်၏ ခွင့်ပြုချက်မရှိဘဲ ကွန်ပျူတာ/မိုဘိုင်းဖုန်းစနစ်အတွင်းရှိ အချက်အလက်များ (Chat/Photos) ကို မရိုးမဖြောင့်သော သဘောဖြင့် ဝင်ရောက်ကြည့်ရှုခြင်း၊ ရယူခြင်း ပြုလုပ်ပါက ဤဥပဒေပုဒ်မဖြင့် အရေးယူပါမည်။</p>
+            </div>
+
+            <div class="law-card">
+                <h4>(ဂ) ဆက်သွယ်ရေးဥပဒေ နှင့် ရာဇသတ်ကြီး</h4>
+                <p><strong>ပုဒ်မ ၆၆(ဃ) / ပုဒ်မ ၅၀၃ / ၅၀၆ -</strong> စစ်ဆေးတွေ့ရှိသည့် Chat နှင့် ဓာတ်ပုံများကို တစ်ဆင့်ဖြန့်ဝေခြင်း၊ အရှက်ခွဲခြင်း ပြုလုပ်ပါက <em>ဆက်သွယ်ရေးဥပဒေ ပုဒ်မ ၆၆(ဃ)</em> ဖြင့်လည်းကောင်း၊ ယင်းအချက်အလက်များကို အကြောင်းပြ၍ ခြိမ်းခြောက်အကျပ်ကိုင်ပါက <em>ရာဇသတ်ကြီး ပုဒ်မ ၅၀၃ / ၅၀၆ (ရာဇဝတ်မကင်းသော ခြောက်လှန့်မှု)</em> ဖြင့်လည်းကောင်း တရားစွဲဆိုပါမည်။</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🛡️ ၂။ စည်းကမ်းထိန်းသိမ်းရေးနှင့် ကိုယ်ရေးကိုယ်တာ နယ်နိမိတ်</h3>
+            <ul class="rules-list">
+                <li>ကျောင်းစည်းကမ်း သို့မဟုတ် အဖွဲ့အစည်းစည်းကမ်းအရ ဖုန်းသိမ်းဆည်းပိုင်ခွင့် ရှိသည့်တိုင်အောင် ဖုန်းအတွင်းရှိ <strong>Password ဖွင့်ခိုင်းခြင်း၊ Chat နှင့် Gallery ဝင်စစ်ခြင်း</strong> တို့သည် စည်းကမ်းထိန်းသိမ်းရေးဘောင်ကို ကျော်လွန်ပြီး တရားဥပဒေကို ချိုးဖောက်ခြင်း ဖြစ်ပါသည်။</li>
+                <li>ထိုသို့ ကျူးလွန်စစ်ဆေးကြောင်း သက်သေအထောက်အထား ရှိပါက သက်ဆိုင်ရာ ရဲစခန်းနှင့် တရားရုံးတို့တွင် တိုက်ရိုက်အမှုဖွင့် တရားစွဲဆိုသွားမည် ဖြစ်ပါသည်။</li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="copyNotice()">
+                📋 ဥပဒေပုဒ်မပါ အသိပေးစာ ကူးယူရန်
+            </button>
+            <button class="btn btn-outline" onclick="window.print()">
+                🖨️ စာရွက်ထုတ်ရန် (Print / PDF)
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Digital Privacy & Legal Notice | တည်ဆဲဥပဒေများအရ ပုဂ္ဂိုလ်ရေးလွတ်လပ်ခွင့် ကာကွယ်ရေး အသိပေးချက်
+    </footer>
+</div>
+
+<script>
+    function copyNotice() {
+        const noticeText = "【တရားဝင် ဥပဒေအသိပေးချက်】 ဖုန်းပိုင်ရှင်၏ ခွင့်ပြုချက် သို့မဟုတ် တရားရုံးဝရမ်းမပါဘဲ ဖုန်းအတွင်းရှိ ကိုယ်ရေးကိုယ်တာ Chat နှင့် Photos များကို ဝင်ရောက်စစ်ဆေးပါက 'နိုင်ငံသားများ၏ ပုဂ္ဂိုလ်ဆိုင်ရာ လွတ်လပ်မှုနှင့် လုံခြုံမှုကို အကာအကွယ်ပေးရေး ဥပဒေ (ပုဒ်မ ၇/၈)'၊ 'အီလက်ထရောနစ် ဆက်သွယ်ဆောင်ရွက်ရေး ဥပဒေ ပုဒ်မ ၃၄(ဂ)' တို့ဖြင့်လည်းကောင်း၊ အချက်အလက်ဖြန့်ဝေ/ခြိမ်းခြောက်ပါက 'ဆက်သွယ်ရေးဥပဒေ ပုဒ်မ ၆၆(ဃ)' နှင့် 'ရာဇသတ်ကြီး ပုဒ်မ ၅၀၆' တို့ဖြင့်လည်းကောင်း တရားစွဲဆို အရေးယူသွားမည် ဖြစ်ပါသည်။";
+        
+        navigator.clipboard.writeText(noticeText).then(() => {
+            alert("ဥပဒေပုဒ်မများပါဝင်သော အသိပေးစာသားကို ကူးယူပြီးပါပြီ။");
+        }).catch(err => {
+            alert("ကူးယူ၍ မရပါ။ ကိုယ်တိုင် Select မှတ်၍ ကူးယူပါ။");
+        });
+    }
+</script>
+
+</body>
+</html>
